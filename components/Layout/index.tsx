@@ -20,7 +20,6 @@ const Main: any = styled('main', { shouldForwardProp: (prop) => prop !== 'open' 
   backgroundColor: 'rgb(227, 242, 253)',
   width: 'calc(100% - 260px)',
   padding: 20,
-  marginRight: 20,
   transition: 'margin 225ms cubic-bezier(0, 0, 0.2, 1) 0ms',
   ...(!open && {
       borderBottomLeftRadius: 0,
@@ -41,7 +40,6 @@ const Main: any = styled('main', { shouldForwardProp: (prop) => prop !== 'open' 
           marginLeft: '10px',
           width: "100%",
           padding: '16px',
-          marginRight: '10px'
       }
   }),
   ...(open && {
