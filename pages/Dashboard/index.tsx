@@ -47,7 +47,7 @@ const Dashboard = (props: any) => {
   const [dataError, setDataError] = useState<PhoneNumberType>(INIT_ERROR);
   const [itemIndex, setItemIndex] = useState<number>(1);
   const [querySearch, setQuerySearch] = useState<string>("");
-  const [keyword, setKeyword] = useState("");
+  const [keyword, setKeyword] = useState<any>("");
 
   const router = useRouter();
 
@@ -62,6 +62,10 @@ const Dashboard = (props: any) => {
     const querySearch =
       `limit=${rowsPerPage}&offset=${page * rowsPerPage}` +
       (router.query?.keyword ? `&keyword=${router.query?.keyword}` : "");
+    if(router.query?.keyword) {
+        setKeyword(router.query?.keyword)
+    }
+    console.log(router.query?.keyword)
     setQuerySearch(querySearch);
     searchPhone(querySearch);
   }, [searchPhone, router.query, dataDeletePhone, dataCreatePhone]);
@@ -102,6 +106,8 @@ const Dashboard = (props: any) => {
     })
   }
 
+  console.log(123, keyword)
+
   return (
     <>
       <Box sx={{ textAlign: "center", fontWeight: "700" }}>
@@ -127,6 +133,7 @@ const Dashboard = (props: any) => {
         placeholder="Search Phone Number"
         name="keyword"
         onChange={(e:any) => handleSearchKeyword(e.target.value)}
+        value={keyword}
         />
         <Button sx={{height: "60px", position: "absolute", marginLeft: "-65px"}} onClick={handleSearch}>
             <SearchIcon />
