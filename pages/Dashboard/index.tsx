@@ -65,8 +65,6 @@ const Dashboard = (props: any) => {
     if(router.query?.keyword) {
         setKeyword(router.query?.keyword)
     }
-    console.log(router.query?.keyword)
-    setQuerySearch(querySearch);
     searchPhone(querySearch);
   }, [searchPhone, router.query, dataDeletePhone, dataCreatePhone]);
 
@@ -106,11 +104,10 @@ const Dashboard = (props: any) => {
     })
   }
 
-  console.log(123, keyword)
 
   return (
     <>
-      <Box sx={{ textAlign: "center", fontWeight: "700" }}>
+      <Box sx={{ textAlign: "center", fontWeight: "700",marginBottom: '40px' }}>
         Phone Number Table
       </Box>
       <CreatePhoneDialog
@@ -127,7 +124,7 @@ const Dashboard = (props: any) => {
       />
       <Box sx={{marginTop: "30px"}}>
         <TextField sx={{
-            width: "400px",
+            width: "370px",
             background: "white",
         }}
         placeholder="Search Phone Number"
