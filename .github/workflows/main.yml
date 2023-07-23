@@ -10,7 +10,7 @@ on:
       deploy_branch:
         description: 'Type branch name'
         required: true
-        default: 'develop'
+        default: 'main'
 
 jobs:
   nextjs-ci:
