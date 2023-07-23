@@ -41,7 +41,7 @@ jobs:
           port: 22
           script_stop: true
           script: |
-            cd PhoneType/PhoneTypeClient/phone-number-type-client
+            cd PhoneType/PhoneTypeClient
             git fetch origin ${{ github.event.inputs.deploy_branch }}
             git checkout -f
             git checkout ${{ github.event.inputs.deploy_branch }}
